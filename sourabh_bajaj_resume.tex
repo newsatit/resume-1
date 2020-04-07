@@ -17,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage[T1]{fontenc}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -68,119 +69,146 @@
 
 \renewcommand{\labelitemii}{$\circ$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*,label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+
+%------------
+% my new template
+
+
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\exptitle}[4]{
+  \vspace{7pt}
+  \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1}, #2, \textit{#3} & #4 \\
+  \end{tabular*}\vspace{-5pt}
+}
 
+\newcommand{\projtitle}[2]{
+  \vspace{7pt}
+  \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1}, #2 \\
+  \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\award}[2]{
+  \vspace{7pt}
+  \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+  \end{tabular*}
+}
+
+
+
+\newcommand{\expstart}{\begin{itemize}[leftmargin=5mm]}
+\newcommand{\expend}{\end{itemize}\vspace{-5pt}}
+\newcommand{\expitem}[1]{\item\small{{#1 \vspace{-5pt}}}}
 
 \begin{document}
 
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-  \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-\end{tabular*}
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+{\Large \textbf{Dawanit (Neal) Satitsumpun}}
+
+\ \ \href{mailto:satitsumpun@wisc.edu}{satitsumpun@wisc.edu}\ \ 
+\ \
+\ \ Github:\href{https://github.com/newsatit}{\bf newsatit} 
+\ \ 
+\ \ LinkedIn:\href{https://www.linkedin.com/in/dawanit}{\bf dawanit} 
+\ \ 
+\ \ (608)332-0719
+
+\end{center}
 
 
 %-----------EDUCATION-----------------
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Master of Science in Computer Science;  GPA: 4.00}{Aug. 2012 -- Dec. 2013}
-    \resumeSubheading
-      {Birla Institute of Technology and Science}{Pilani, India}
-      {Bachelor of Engineering in Electrical and Electronics;  GPA: 3.66 (9.15/10.0)}{Aug. 2008 -- July. 2012}
-  \resumeSubHeadingListEnd
+  \vspace{-1pt}
+  \begin{tabular*}{1.00\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{University of Wisconsin-Madison} & May 2021 \\
+   \small Bachelor of Science in Computer Engineering and Computer Sciences \\ \small{GPA: 3.92/4.00} \\
+  \end{tabular*}
+ \vspace{1pt}
+\small{\textbf{Coursework}{: Intro to Data Structures, Intro to Algorithms, Intro to Operating Systems, Database Management Systems, Machine Learning, Intro to Artificial Intelligence, Intro to Microprocessor Systems, Intro to Computer Architecture \vspace{-2pt}}}
 
+%
+%--------PROGRAMMING SKILLS------------
+\section{Programming Skills}
+
+\textbf{Languages}: Python, Java, C/C++, JavaScript, Scala, MATLAB, SQL, HTML/CSS \\
+\textbf{Frameworks/Tools}: React, React Native, Django, Tensorflow, Keras, Bootstrap, Git \vspace{-2pt}
+%  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
-  \resumeSubHeadingListStart
-
-    \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
-      \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models. Worked on APIs and performance for training models on Tensor Processing Units (TPU).}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
-      \resumeItemListEnd
-      
-% --------Multiple Positions Heading------------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
-
-    \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
-      \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platform which allowed for creating various tasks for crowd sourcing or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursera, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
-
-  \resumeSubHeadingListEnd
-
+ \vspace{-6pt}
+  \exptitle{Software Engineer Intern}{Agoda}{Bangkok, Thailand}{June 2019 – Aug 2019}
+  \expstart
+    \expitem{Developed a web-based tool to generate code for new RESTful API endpoints automatically to the team repository using Github API in Scala.js. The code generated includes routes, unit tests, integration tests, Swagger, SQL table. }
+    \expitem{Modified customer data API endpoints in Scala including exception message, Grafana response log. }
+  \expend
+  
+  \exptitle{Software Engineer Intern}{Buzzfreeze Solution}{Bangkok, Thailand}{June 2018 – Aug 2018}
+  \expstart
+    \expitem{Developed the frontend of promotion management mobile application in React-Native. }
+    \expitem{Incorporated backend APIs and Implemented new features such as QR Code Scanning, searching, authentication, routing, and embedded Google Maps. }
+  \expend
 
 %-----------PROJECTS-----------------
 \section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
+  \vspace{-6pt}
+  \projtitle{\href{https://github.com/newsatit/image-dictionary}{Image Dictionary}}{Personal Project}
+  \expstart
+    \expitem{Developed dictionary (with image) web application in React and Django.}
+    \expitem{Used Merriam-Webster Dictionary API and Google Custom Search API for looking up word's definitions and images. }
+    \expitem{Implemented RESTful APIs for CRUD operation on word query history to SQLite database.}
+  \expend
+ 
+  \projtitle{\href{https://github.com/newsatit/meme_image_recovery}{Meme Image Recovery}}{Personal Project}
+  \expstart
+    \expitem{Developed an application that can recover an original image from a meme image in Python.}
+    \expitem{Utilized Google Cloud Vision API  to remove the text from meme image and incorporated an open-source machine learning model in TensorFlow (\href{https://github.com/JiahuiYu/generative_inpainting}Generative Image Inpainting with Contextual Attention) to recover the removed regions based on the context of the image.}
+    \expitem{Worked with Professor Vikas Singh to research the methods to improve the performance of the pipeline.}
+  \expend
+  
+  \projtitle{Autonomous Go-kart Race Path Planning}{Wisconsin Autonomous}
+  \expstart
+    \expitem{Worked with a team of 8 students to develop the driving functions of an autonomous go-kart.}
+    \expitem{Implemented a real-time local path planning using an open-source robotics algorithm (\href{https://github.com/AtsushiSakai/PythonRobotics}{Model Predictive Trajectory Generator) in Python.}}
+  \expend
+  
+  \projtitle{Skin Lesion Analysis}{AI Club}
+  \expstart
+    \expitem{Developed a computer vision algorithm to separate the skin pixels that have lesion from the pixel that does not.}
+    \expitem{Implemented and trained an SVM(Support Vector Machine) model for background-foreground skin lesion segmentation using scikit-learn Python library.}
+  \expend
+  
+  \projtitle{Wireless Pong Game}{Intro to Microprocessor Systems (ECE353)}
+  \expstart
+    \expitem{Co-developed an interactive wireless Pong game on Tiva-C LaunchPad using C. }
+    \expitem{Implemented wireless communication, game physics, and user input handling by utilizing UART, EEPROM, I2C, and SPI interfaces.}
+  \expend
+  
+%-----------AWARDS-----------------
+\section{Awards}
+  Liechty, Donald Engineering Scholarship, 2019\\
+  Laine, Ernest J Outstanding Engineering Student Scholarship, 2019 \\
+  12\textsuperscript{nd}/202 (teams), North Central North America ACM-ICPC, 2018 \\
+  25\textsuperscript{th}/90, Silver Medal, Thailand Olympiad in Informatics 2015 \vspace{-2pt}
+  
+%-----------LEADERSHIP-----------------
+\section{Leadership}
+   Vice President, Thai Student Association at UW-Madison, 2019
+   
 
 %
 %--------PROGRAMMING SKILLS------------
